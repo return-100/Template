@@ -49,7 +49,7 @@ int clockwiseCheck(point a, point b, point c)
 
 /*** Used in Graham Scan to Sort the Point according to their Polar Angle ***/
 
-bool polarOrder(point pivot, point a, point b)  
+bool polarOrder(point a, point b)  
 {
     int order = clockwiseCheck(pivot, a, b);
     
