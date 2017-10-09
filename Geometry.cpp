@@ -34,6 +34,31 @@ long long area(point a, point b, point c)
     return (a.x - b.x) * (b.y - c.y) - (a.y - b.y) * (b.x - c.x);
 }
 
+/*** -1 = anti - clockwise, 0 = co - linear, 1 = clockwise ***/
+
+int clockwiseCheck(point a, point b, point c) 
+{
+    int area = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
+    
+    if (area > 0)
+        return -1;
+    else if (area < 0)
+        return 1;
+    return 0;
+}
+
+/*** Used in Graham Scan to Sort the Point according to their Polar Angle ***/
+
+bool polarOrder(point pivot, point a, Point b)  
+{
+    int order = clockwiseCheck(pivot, a, b);
+    
+    if (order == 0)
+        return dist(pivot, a) < dist(pivot, b);
+    
+    return (order == -1);
+}
+
 /*** Montone Chain Method for finding Convex Hull ***/
  
 void convexHull()
