@@ -17,7 +17,7 @@ public:
   
     /*** Use for Montone Chain ***/
   
-    bool operator < (point a, point b)
+    bool operator < (point b)
     {
         return (a.x < b.x || (a.x == b.x && a.y < b.y));
     }
