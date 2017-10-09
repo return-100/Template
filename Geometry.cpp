@@ -19,7 +19,7 @@ public:
   
     bool operator < (point b)
     {
-        return (a.x < b.x || (a.x == b.x && a.y < b.y));
+        return (x < b.x || (x == b.x && y < b.y));
     }
 };
 
