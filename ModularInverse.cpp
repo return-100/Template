@@ -1,20 +1,20 @@
-long long modPower(long long a, long long b)
+long long bigMod(long long base, long long pow)
 {
     long long ret = 1;
-    
-    while (b)
+
+    while (pow)
     {
-        if (b & 1)
-            ret *= a, ret %= mod;
-        
-        a *= a, a %= mod;
-        b >>= 1;
+        if (pow & 1)
+            ret *= base, ret %= mod;
+
+        base *= base, base %= mod;
+        pow >>= 1;
     }
-    
+
     return ret;
 }
 
-long long modInverse(long long a)
+long long modInverse(long long base)
 {
-    return modPower(a, mod - 2);
+    return bigMod(base, mod - 2);
 }
