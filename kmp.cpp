@@ -1,8 +1,6 @@
-void preprocess()
+void failureFunction()
 {
-    int j = 0;
- 
-    for (int i = 1; i < sz; ++i)
+    for (int i = 1, j = 0; i < sz; ++i)
     {
         while (j > 0 && str[i] != str[j])
             j = lcp[j - 1];
